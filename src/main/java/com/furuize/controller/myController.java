@@ -21,4 +21,6 @@ public class myController {
     public String prediction(Model model) {
         return "prediction";
     }
+    
+
 }

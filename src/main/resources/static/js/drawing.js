@@ -24,8 +24,9 @@ setInterval(function(){update_data()}, 1000);
 
 // 异步加载数据
 function update_data() {
-	$.get('/js/data.json').done(function (data) {
+	$.get('/read').done(function (data) {
 	    // 填入数据
+		data = JSON.parse(data)
 	    myChart.setOption({
 	        xAxis: {
 	            data: data.categories
