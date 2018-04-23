@@ -1,8 +1,5 @@
 package com.furuize.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 
-public class myController {
+public class IndexController {
     @RequestMapping("/index")
     public String index(Model model) {
         return "index";
@@ -25,8 +22,5 @@ public class myController {
         return "prediction";
     }
     
-    @RequestMapping("/train")
-	public void train(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("train");
-	}
+
 }
