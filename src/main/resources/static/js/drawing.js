@@ -26,7 +26,8 @@ setInterval(function(){update_data()}, 1000);
 function update_data() {
 	$.get('/read').done(function (data) {
 	    // 填入数据
-		data = JSON.parse(data)
+		data = JSON.parse(data);
+		console
 	    myChart.setOption({
 	        xAxis: {
 	            data: data.categories
