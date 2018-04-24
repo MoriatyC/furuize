@@ -367,6 +367,7 @@
 	<!-- train -->
 	<script>
 		$("#train_btn").click(function () {
+			$.get('/train');
 			console.log("begin trainning...");
 			$("#train_btn").text("正在训练");
 			$('#train_btn').attr('disabled',"true");

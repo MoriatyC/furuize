@@ -11,16 +11,18 @@ import java.io.InputStreamReader;
  **/
 public class Util {
 	public static void call() throws IOException, InterruptedException {
+		//先执行tensor命令
 		System.out.println("start");
-		String[] arg1 = new String[] { "python", "E:\\pydemo\\demo.py" };
-		Process pr = Runtime.getRuntime().exec(arg1);
-		BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+		String[] args = new String[]{"zsh", "/home/cmh/train.sh"};
+		Process pr = Runtime.getRuntime().exec(args);
+		BufferedReader in = new BufferedReader(new InputStreamReader(pr.getErrorStream()));
 		String line;
 		while ((line = in.readLine()) != null) {
 			System.out.println(line);
 		}
 		in.close();
 		pr.waitFor();
+		
 		System.out.println("end");
 	}
 }

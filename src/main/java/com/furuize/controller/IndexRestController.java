@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexRestController {
     @GetMapping("/read")
     public String read(Model model) {
-        Path path = Paths.get("home", "cmh", "dataset", "data.json");
+        Path path = Paths.get("/home", "cmh", "dataset", "data.json");
 //        Path path = Paths.get("d:","data.json");
         String json = null;
         try {
