@@ -1,9 +1,16 @@
 package com.furuize.controller;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.furuize.utils.Util;
 
 /**
 *@author: Menghui Chen
@@ -22,5 +29,14 @@ public class IndexController {
         return "prediction";
     }
     
-
+    @RequestMapping("/train")
+    public void train(HttpServletRequest req, HttpServletResponse res) {
+        System.out.println("train");
+        try {
+			Util.call();
+		} catch (IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 }

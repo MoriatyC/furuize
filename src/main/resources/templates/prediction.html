@@ -246,26 +246,25 @@
 					<div class="col-xs-12 col-md-6">
 						<div class="panel panel-default">
 							<div class="panel-body easypiechart-panel">
-								<form method="POST" enctype="multipart/form-data" action="/prediction">
-									<table>
+								<form style="margin-top: 10%;margin-bottom:10%" method="POST" enctype="multipart/form-data" action="/prediction">
+									<table align="center">
 										<tr>
-											<td><input type="file" name="file" 
-											class="btn btn-default"/></td>
-											<td><input type="submit" value="Upload"  class="btn btn-primary btn"/></td>
-										</tr>
+											<td>
+											<input type="file" name="file" class="btn btn-default btn-lg"/>
+											</td>							
+											<td>
+											<input type="submit" value="文件上传"  class="btn btn-primary btn-lg"/>
+											</td>
+										</tr>						
 									</table>
 								</form>
-
-
-
-						
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<div class="panel panel-default">
 							<div class="panel-body easypiechart-panel">
-								<button style="margin-top: 5%" class="btn btn-primary btn-lg">训练</button>
+								<button style="margin-top: 5%" id = "train_btn" class="btn btn-primary btn-lg">训练</button>
 								<div class="easypiechart" id="easypiechart-red"
 									data-percent="96">
 									<span class="percent">96%</span>
@@ -364,8 +363,15 @@
 	<script src="/js/custom-scripts.js"></script>
 	<script src="/js/echarts.js"></script>
 	<script src="/js/drawing.js"></script>
+	
+	<!-- train -->
 	<script>
-		
+		$("#train_btn").click(function () {
+			$.get('/train');
+			console.log("begin trainning...");
+			$("#train_btn").text("正在训练");
+			$('#train_btn').attr('disabled',"true");
+		});
 	</script>
 
 </body>
